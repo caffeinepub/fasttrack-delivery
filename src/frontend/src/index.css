@@ -1,0 +1,118 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  src: url("/assets/fonts/PlusJakartaSans.woff2") format("woff2");
+  font-weight: 300 700;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    --radius: 0.75rem;
+
+    /* Page / layout */
+    --background: 0.955 0.009 243;
+    --foreground: 0.18 0.03 254;
+
+    /* Cards */
+    --card: 1 0 0;
+    --card-foreground: 0.18 0.03 254;
+
+    /* Popover */
+    --popover: 1 0 0;
+    --popover-foreground: 0.18 0.03 254;
+
+    /* Primary (blue #2563EB) */
+    --primary: 0.49 0.22 264;
+    --primary-foreground: 1 0 0;
+
+    /* Secondary */
+    --secondary: 0.93 0.01 243;
+    --secondary-foreground: 0.18 0.03 254;
+
+    /* Muted (#64748B) */
+    --muted: 0.93 0.01 243;
+    --muted-foreground: 0.55 0.04 252;
+
+    /* Accent (teal #14B8A6) */
+    --accent: 0.68 0.12 185;
+    --accent-foreground: 1 0 0;
+
+    /* Destructive */
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 1 0 0;
+
+    /* Borders / inputs */
+    --border: 0.9 0.01 240;
+    --input: 0.9 0.01 240;
+    --ring: 0.49 0.22 264;
+
+    /* Custom semantic */
+    --hero-from: 0.38 0.18 264;
+    --hero-to: 0.42 0.2 264;
+    --navy: 0.18 0.04 254;
+    --teal: 0.68 0.12 185;
+    --green: 0.67 0.16 162;
+    --map-bg: 0.22 0.04 250;
+
+    /* Charts */
+    --chart-1: 0.49 0.22 264;
+    --chart-2: 0.68 0.12 185;
+    --chart-3: 0.67 0.16 162;
+    --chart-4: 0.646 0.222 41.116;
+    --chart-5: 0.769 0.188 70.08;
+
+    /* Sidebar */
+    --sidebar: 1 0 0;
+    --sidebar-foreground: 0.18 0.03 254;
+    --sidebar-primary: 0.49 0.22 264;
+    --sidebar-primary-foreground: 1 0 0;
+    --sidebar-accent: 0.93 0.01 243;
+    --sidebar-accent-foreground: 0.18 0.03 254;
+    --sidebar-border: 0.9 0.01 240;
+    --sidebar-ring: 0.49 0.22 264;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-jakarta;
+  }
+}
+
+@keyframes pulse-ring {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.4);
+    opacity: 0.4;
+  }
+}
+
+@keyframes truck-move {
+  0% {
+    transform: translateX(0px);
+  }
+  50% {
+    transform: translateX(6px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+.animate-pulse-ring {
+  animation: pulse-ring 1.5s ease-in-out infinite;
+}
+
+.animate-truck {
+  animation: truck-move 2s ease-in-out infinite;
+}
